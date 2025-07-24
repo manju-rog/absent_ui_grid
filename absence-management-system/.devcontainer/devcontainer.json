@@ -1,0 +1,58 @@
+{
+  "name": "Absence Management System - React Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "ppa": true,
+      "version": "latest"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-json",
+        "formulahendry.auto-rename-tag",
+        "christian-kohler.path-intellisense",
+        "ms-vscode.vscode-typescript-next",
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.vscode-css-peek",
+        "ritwickdey.liveserver",
+        "ms-vscode.vscode-react-native"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "emmet.includeLanguages": {
+          "javascript": "javascriptreact"
+        },
+        "emmet.triggerExpansionOnTab": true,
+        "javascript.preferences.quoteStyle": "single",
+        "typescript.preferences.quoteStyle": "single",
+        "files.associations": {
+          "*.js": "javascriptreact"
+        }
+      }
+    }
+  },
+
+  "forwardPorts": [3000, 3001],
+  "portsAttributes": {
+    "3000": {
+      "label": "React Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
+
+  "postCreateCommand": "npm install",
+  "postAttachCommand": "echo '🚀 Absence Management System Dev Environment Ready!' && echo '📦 Run: npm start (starts on port 3000)' && echo '🧪 Run: npm test (runs tests)' && echo '🏗️  Run: npm run build (creates production build)'",
+
+  "remoteUser": "node"
+}
